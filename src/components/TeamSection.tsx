@@ -2,9 +2,9 @@
 
 export default function TeamSection() {
   const team = [
-    { name: "Saneesh K", role: "MD & Technical Lead", img: "/saneesh.webp" },
-    { name: "Prabin K", role: "Operation Head", img: "/prabin.webp" },
-    { name: "Sreejesh K", role: "Technical Head", img: "/sreejesh.webp" },
+    { name: "Saneesh K", role: "MD & Technical Lead", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop" },
+    { name: "Prabin K", role: "Operation Head", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=256&auto=format&fit=crop" },
+    { name: "Sreejesh K", role: "Technical Head", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&auto=format&fit=crop" },
   ];
 
   return (

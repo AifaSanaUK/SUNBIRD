@@ -15,8 +15,8 @@ export default function AboutSystems() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 32 }}>
           {/* ON-GRID SYSTEM */}
-          <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden" }}>
-            <div style={{ height: 240, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+          <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
+            <div style={{ height: 240, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center", padding: 12 }}>
               <img src="/ongrid.webp" alt="On-Grid Solar System Diagram" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
             </div>
             <div style={{ padding: 32 }}>
@@ -35,9 +35,9 @@ export default function AboutSystems() {
           </div>
 
           {/* HYBRID SYSTEM */}
-          <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", border: "2px solid var(--primary-light)" }}>
-            <div style={{ height: 240, background: "var(--primary-light)", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
-              <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+          <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", border: "2px solid var(--primary-light)", borderRadius: 24 }}>
+            <div style={{ height: 240, background: "var(--primary-light)", overflow: "hidden" }}>
+              <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div style={{ padding: 32 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>

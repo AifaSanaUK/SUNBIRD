@@ -2,6 +2,45 @@
 import { Cpu, Battery, Zap, ShieldCheck } from "lucide-react";
 
 export default function WhyChooseUs() {
+  const features = [
+    { 
+      title: "Smart Technology", 
+      desc: "AI-driven monitoring for peak performance. Real-time monitoring via mobile app. Optimize your energy usage patterns. Get instant alerts for maintenance. Maximize your solar harvesting daily.", 
+      icon: <Cpu size={32} />,
+      img: "/smarttechnoly.webp"
+    },
+    { 
+      title: "Premium Equipment", 
+      desc: "Tier-1 solar panels and industrial inverters. Tier-1 panels with 25-year warranty. Industrial grade hybrid inverters. High-cycle battery storage systems. Built to withstand extreme weather.", 
+      icon: <Battery size={32} />,
+      img: "/panel.webp"
+    },
+    { 
+      title: "24/7 Power Security", 
+      desc: "Uninterrupted energy with smart hybrid storage. Automatic transition to battery power. Keep essential appliances running. Protect sensitive electronics from surges. Peace of mind during any outage.", 
+      icon: <Zap size={32} />,
+      img: "/banner.webp"
+    },
+    { 
+      title: "Certified Expertise", 
+      desc: "MNRE approved installers with 10+ years experience. Fully compliant with MNRE standards. Safety-first installation protocols. Licensed electrical engineers. Proven track record of 500+ projects.", 
+      icon: <ShieldCheck size={32} />,
+      img: "/certifies.webp"
+    },
+    { 
+      title: "Cost Efficiency", 
+      desc: "Drastically reduce electricity bills and maximize ROI. Slash your grid dependency by 80%. Protect yourself from rising tariffs. Short payback period for investment. Tax benefits and govt subsidies available.", 
+      icon: <Zap size={32} color="var(--primary)" />,
+      img: "/costefeicnly.jpg"
+    },
+    { 
+      title: "Expert Support", 
+      desc: "Dedicated 24/7 maintenance and technical assistance. Remote diagnostic capabilities. Regular preventive maintenance checks. On-site support within 24 hours. Dedicated relationship managers for you.", 
+      icon: <ShieldCheck size={32} color="var(--primary)" />,
+      img: "/24house.webp"
+    },
+  ];
+
   return (
     <section id="why-choose-us" className="section" style={{ background: "var(--gray-50)", scrollMarginTop: "100px" }}>
       <div className="container-custom">
@@ -12,70 +51,75 @@ export default function WhyChooseUs() {
 
         <div className="features-grid" style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 24,
-          marginBottom: 80
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: 24
         }}>
-          {[
-            { title: "Smart Technology", desc: "AI-driven monitoring for peak performance.", icon: <Cpu size={32} /> },
-            { title: "Premium Equipment", desc: "Tier-1 solar panels and industrial inverters.", icon: <Battery size={32} /> },
-            { title: "24/7 Power Security", desc: "Uninterrupted energy with smart hybrid storage.", icon: <Zap size={32} /> },
-            { title: "Certified Expertise", desc: "MNRE approved installers with 10+ years experience.", icon: <ShieldCheck size={32} /> },
-            { title: "Cost Efficiency", desc: "Drastically reduce electricity bills and maximize ROI.", icon: <Zap size={32} color="var(--primary)" /> },
-            { title: "Expert Support", desc: "Dedicated 24/7 maintenance and technical assistance.", icon: <ShieldCheck size={32} color="var(--primary)" /> },
-          ].map((item) => (
-            <div key={item.title} className="card animate-fadeup" style={{ textAlign: "center" }}>
-              <div style={{ color: "var(--primary)", marginBottom: 20, display: "flex", justifyContent: "center" }}>{item.icon}</div>
-              <h4 style={{ fontWeight: 800, fontSize: "1.1rem", marginBottom: 12 }}>{item.title}</h4>
-              <p style={{ color: "var(--gray-500)", fontSize: "0.85rem" }}>{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* BRAND ASSET GALLERY */}
-        <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <span className="section-label">Our Standard</span>
-          <h2 className="section-title" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2rem)" }}>The Sunbird Professionalism</h2>
-          <div className="divider" style={{ margin: "24px auto" }} />
-        </div>
-
-        <div className="professional-grid" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-          gap: 20
-        }}>
-          {[
-            { title: "Expert Gear", desc: "Branded Cap", img: "/cap.webp" },
-            { title: "Team Uniform", desc: "Professional Shirt", img: "/shirt.webp" },
-            { title: "Premium Panels", desc: "Tier-1 Quality", img: "/panel.webp" },
-            { title: "Visit Card", desc: "Corporate Identity", img: "/visitcard1.webp" }
-          ].map((item) => (
-            <div key={item.title} className="card animate-fadeup" style={{ padding: 16, textAlign: "center", display: "flex", flexDirection: "column" }}>
-              <div style={{
-                borderRadius: 16,
-                overflow: "hidden",
-                marginBottom: 20,
-                height: 180,
-                background: "#f8f9fa",
+          {features.map((item) => (
+            <div 
+              key={item.title} 
+              className="card animate-fadeup" 
+              style={{ 
+                padding: 0, 
+                overflow: "hidden", 
+                position: "relative",
+                minHeight: "340px", // Overridden by CSS on mobile to 220px
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: 20
+                flexDirection: "column",
+                justifyContent: "center", // Changed from flex-end to center
+                border: "none",
+                borderRadius: 24
+              }}
+            >
+              {/* Background Image with Overlay */}
+              <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)) , url('${item.img}')`, // Darker overlay for centering
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                zIndex: 1,
+                transition: "transform 0.5s ease"
+              }} className="hover-zoom" />
+
+              {/* Content Overlay */}
+              <div style={{ 
+                position: "relative", 
+                zIndex: 2, 
+                padding: "24px 20px", // Tighter padding for mobile centering
+                color: "white",
+                textAlign: "center", // Centered text for centered content
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
               }}>
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "contain",
-                    transition: "transform 0.4s ease"
-                  }}
-                  className="hover-zoom"
-                />
+                <div style={{ 
+                  color: "var(--primary)", 
+                  marginBottom: 16, 
+                  background: "white", 
+                  width: 50, 
+                  height: 50, 
+                  borderRadius: "50%", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  justifyContent: "center",
+                  boxShadow: "0 4px 15px rgba(0,0,0,0.3)"
+                }}>
+                  {item.icon}
+                </div>
+                <h4 style={{ fontWeight: 800, fontSize: "1.05rem", marginBottom: 12 }}>{item.title}</h4>
+                <p style={{ 
+                  color: "rgba(255,255,255,0.9)", 
+                  fontSize: "0.75rem", 
+                  lineHeight: 1.5,
+                  margin: 0,
+                  maxWidth: "100%"
+                }}>
+                  {item.desc}
+                </p>
               </div>
-              <h4 style={{ fontWeight: 800, fontSize: "1.05rem", marginBottom: 6 }}>{item.title}</h4>
-              <p style={{ fontSize: "0.85rem", color: "var(--gray-500)", marginBottom: 0 }}>{item.desc}</p>
             </div>
           ))}
         </div>

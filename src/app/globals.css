@@ -175,7 +175,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .section { padding: 60px 0; }
+  .section { padding: 40px 0 !important; } /* Further reduced for compactness */
   .hide-mobile { display: none !important; }
   .container-custom { padding: 0 20px; }
   .section-title { font-size: 1.5rem !important; } /* Reduced from 1.85rem */
@@ -243,12 +243,18 @@ body {
   /* 2-COLUMN MOBILE GRIDS FOR HIGH DENSITY */
   .features-grid,
   .professional-grid,
-  #team .container-custom > div:last-child,
-  #blog .container-custom > div:last-child {
+  .blog-grid,
+  #team .container-custom > div:last-child {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
   }
+
+  /* TIGHTEN UP MOBILE WHITESPACE */
+  .section { padding: 48px 0 !important; }
+  .features-grid .card { min-height: 220px !important; }
+  .blog-card { min-height: auto !important; }
+  .blog-card div[style*="height: 180"] { height: 120px !important; }
 
   /* Adjustments for smaller cards */
   #why-choose-us .card, .professional-grid .card, #team .card, .blog-card {
