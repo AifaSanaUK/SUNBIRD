@@ -88,19 +88,19 @@ export default function WhyChooseUs() {
               <div style={{ 
                 position: "relative", 
                 zIndex: 2, 
-                padding: "24px 20px", // Tighter padding for mobile centering
+                padding: "clamp(12px, 3vw, 24px)", // Scaled padding for mobile 2-col
                 color: "white",
-                textAlign: "center", // Centered text for centered content
+                textAlign: "center",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center"
               }}>
                 <div style={{ 
                   color: "var(--primary)", 
-                  marginBottom: 16, 
+                  marginBottom: 12, 
                   background: "white", 
-                  width: 50, 
-                  height: 50, 
+                  width: "clamp(40px, 8vw, 50px)", 
+                  height: "clamp(40px, 8vw, 50px)", 
                   borderRadius: "50%", 
                   display: "flex", 
                   alignItems: "center", 
@@ -109,11 +109,11 @@ export default function WhyChooseUs() {
                 }}>
                   {item.icon}
                 </div>
-                <h4 style={{ fontWeight: 800, fontSize: "1.05rem", marginBottom: 12 }}>{item.title}</h4>
+                <h4 style={{ fontWeight: 800, fontSize: "clamp(0.85rem, 3vw, 1.05rem)", marginBottom: 8 }}>{item.title}</h4>
                 <p style={{ 
                   color: "rgba(255,255,255,0.9)", 
-                  fontSize: "0.75rem", 
-                  lineHeight: 1.5,
+                  fontSize: "clamp(0.65rem, 2.5vw, 0.75rem)", 
+                  lineHeight: 1.4,
                   margin: 0,
                   maxWidth: "100%"
                 }}>

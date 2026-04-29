@@ -48,6 +48,21 @@ body {
   overflow-x: hidden;
 }
 
+/* Hero Background */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/banner.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll !important; /* Fixes iOS mobile zoom bug */
+    background-position: center bottom !important; /* Shifts image to show panels */
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--gray-100); }

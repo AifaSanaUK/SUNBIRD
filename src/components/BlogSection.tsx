@@ -82,19 +82,19 @@ export default function BlogSection() {
                   className="hover-zoom"
                 />
               </div>
-              <div style={{ padding: "20px 20px 24px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                  <span style={{ color: "var(--primary)", fontSize: "0.75rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px" }}>
+              <div style={{ padding: "clamp(12px, 3vw, 20px)" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                  <span style={{ color: "var(--primary)", fontSize: "clamp(0.65rem, 2vw, 0.75rem)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px" }}>
                     {item.category}
                   </span>
-                  <span style={{ color: "var(--gray-500)", fontSize: "0.75rem", fontWeight: 500 }}>
+                  <span style={{ color: "var(--gray-500)", fontSize: "clamp(0.65rem, 2vw, 0.75rem)", fontWeight: 500 }}>
                     {item.date}
                   </span>
                 </div>
-                <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--gray-900)", marginBottom: 12, lineHeight: 1.3 }}>
+                <h3 style={{ fontSize: "clamp(0.9rem, 3vw, 1.1rem)", fontWeight: 800, color: "var(--gray-900)", marginBottom: 8, lineHeight: 1.3 }}>
                   {item.title}
                 </h3>
-                <p style={{ color: "var(--gray-500)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: 0 }}>
+                <p style={{ color: "var(--gray-500)", fontSize: "clamp(0.75rem, 2.5vw, 0.85rem)", lineHeight: 1.5, marginBottom: 0 }}>
                   {item.excerpt}
                 </p>
               </div>
