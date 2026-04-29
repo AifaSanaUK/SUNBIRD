@@ -1,190 +1,173 @@
 "use client";
 import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight
+} from "lucide-react";
 
-const footerLinks = {
-  Company: [
-    { label: "About Us", href: "#about" },
-    { label: "Our Team", href: "#team" },
-    { label: "Blog", href: "#blog" },
-    { label: "Careers", href: "#" },
-  ],
-  Services: [
-    { label: "On-Grid Solar", href: "#services" },
-    { label: "Off-Grid Solar", href: "#services" },
-    { label: "Hybrid Systems", href: "#services" },
-    { label: "Smart Monitoring", href: "#services" },
-  ],
-  Support: [
-    { label: "Contact Us", href: "#contact" },
-    { label: "FAQ", href: "#" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-  ],
-};
+// Custom SVG Icons to replace missing Lucide brand icons
+const FacebookIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
+const YoutubeIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.14 1 12 1 12s0 3.86.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.86 23 12 23 12s0-3.86-.46-5.58z" />
+    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { icon: <FacebookIcon size={18} />, href: "#", label: "Facebook" },
+    { icon: <InstagramIcon size={18} />, href: "#", label: "Instagram" },
+    { icon: <YoutubeIcon size={18} />, href: "#", label: "YouTube" },
+    { icon: <LinkedinIcon size={18} />, href: "#", label: "LinkedIn" },
+  ];
+
   return (
-    <footer style={{ background: "#000000", color: "white", paddingTop: 60, paddingBottom: 20 }}>
+    <footer style={{ background: "var(--gray-900)", color: "white", paddingTop: 80, paddingBottom: 40 }}>
       <div className="container-custom">
-        {/* Top Grid */}
-        <div
-          className="footer-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "2fr 1fr 1fr 1fr",
-            gap: 48,
-            paddingBottom: 40,
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-            alignItems: "start",
-          }}
-        >
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: 48,
+          marginBottom: 64
+        }}>
           {/* Brand Column */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            <Link
-              href="#home"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                textDecoration: "none",
-              }}
-            >
-              <img 
-                src="/footer.png" 
-                alt="SUNBIRD Logo" 
-                style={{ 
-                  width: "240px", 
-                  height: "auto", 
-                  objectFit: "contain",
-                  display: "block"
-                }} 
-              />
-            </Link>
-            <p
-              style={{
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "0.95rem",
-                lineHeight: 1.7,
-                maxWidth: 320,
-              }}
-            >
-              Empowering homes and businesses with smart, reliable, and
-              sustainable hybrid solar energy solutions.
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <div style={{ marginBottom: 24, display: "flex", alignItems: "center" }}>
+              <img src="/footer.webp" alt="Sunbird Logo" style={{ height: 40, width: "auto" }} />
+            </div>
+            <p style={{ color: "var(--gray-500)", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: 32, maxWidth: 300 }}>
+              Empowering homes and businesses with smart, reliable hybrid solar solutions since 2015. Leading the transition to sustainable energy.
             </p>
-            {/* Contact info */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 14,
-                marginTop: 12,
-              }}
-            >
-              {[
-                { icon: "📍", text: "123 Solar Street, Energy City" },
-                { icon: "📞", text: "+1 (234) 567-890" },
-                { icon: "✉️", text: "info@sunbirdpower.com" },
-              ].map((item) => (
-                <div
-                  key={item.text}
+
+            {/* Social Icons */}
+            <div style={{ display: "flex", gap: 12 }}>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
                   style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "50%",
+                    background: "rgba(255,255,255,0.05)",
                     display: "flex",
-                    gap: 14,
                     alignItems: "center",
-                    color: "rgba(255,255,255,0.6)",
-                    fontSize: "0.95rem",
+                    justifyContent: "center",
+                    color: "var(--gray-500)",
+                    transition: "all 0.3s ease",
+                    textDecoration: "none"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--primary)";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                    e.currentTarget.style.color = "var(--gray-500)";
+                    e.currentTarget.style.transform = "translateY(0)";
                   }}
                 >
-                  <span style={{ fontSize: "1.2rem", width: "24px", textAlign: "center" }}>{item.icon}</span>
-                  <span>{item.text}</span>
-                </div>
+                  {social.icon}
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Link Columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4
-                style={{
-                  color: "white",
-                  fontWeight: 700,
-                  fontSize: "1.1rem",
-                  marginBottom: 28,
-                  letterSpacing: "0.05em",
-                }}
-              >
-                {category}
-              </h4>
-              <ul style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className="footer-link">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* Quick Links */}
+          <div>
+            <h4 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: 24 }}>Quick Links</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {["Home", "About", "Services", "Team", "Blog", "Contact"].map((link) => (
+                <Link
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  style={{
+                    color: "var(--gray-500)",
+                    fontSize: "0.85rem",
+                    textDecoration: "none",
+                    transition: "color 0.2s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = "white"}
+                  onMouseLeave={(e) => e.currentTarget.style.color = "var(--gray-500)"}
+                >
+                  <ArrowRight size={12} /> {link}
+                </Link>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: 24 }}>Contact Us</h4>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ display: "flex", gap: 16 }}>
+                <div style={{ color: "var(--primary)", marginTop: 2 }}><MapPin size={18} /></div>
+                <p style={{ color: "var(--gray-500)", fontSize: "0.85rem", lineHeight: 1.5 }}>
+                  AKN Arcade, Golf Link Road<br />
+                  Chevayur, Calicut, India
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: 16 }}>
+                <div style={{ color: "var(--primary)" }}><Phone size={18} /></div>
+                <a href="tel:08136888101" style={{ color: "var(--gray-500)", fontSize: "0.85rem", textDecoration: "none" }}>081368 88101</a>
+              </div>
+              <div style={{ display: "flex", gap: 16 }}>
+                <div style={{ color: "var(--primary)" }}><Mail size={18} /></div>
+                <a href="mailto:sunbirdpowersolution@gmail.com" style={{ color: "var(--gray-500)", fontSize: "0.85rem", textDecoration: "none" }}>sunbirdpowersolution@gmail.com</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div
-          style={{
-            padding: "24px 0",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: 20,
-          }}
-        >
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
-            &copy; {new Date().getFullYear()} <span className="brand-font">SUNBIRD</span> <span className="solutions-font">Power Solutions</span>. All
-            rights reserved.
+        <div style={{
+          borderTop: "1px solid rgba(255,255,255,0.05)",
+          paddingTop: 40,
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          gap: 12
+        }}>
+          <p style={{ color: "var(--gray-700)", fontSize: "0.75rem" }}>
+            © {currentYear} Sunbird Power Solutions. All rights reserved.
           </p>
-          <div style={{ display: "flex", gap: 12 }}>
-            {["Smart Energy", "Reliable Power", "Always On"].map((tag) => (
-              <span
-                key={tag}
-                style={{
-                  background: "rgba(0,137,211,0.08)",
-                  border: "1px solid rgba(0,137,211,0.2)",
-                  color: "var(--primary)",
-                  fontSize: "0.8rem",
-                  padding: "6px 14px",
-                  borderRadius: 100,
-                }}
-              >
-                {tag}
-              </span>
-            ))}
+          <div style={{ display: "flex", justifyContent: "center", gap: 24 }}>
+            <Link href="#" style={{ color: "var(--gray-700)", fontSize: "0.75rem", textDecoration: "none" }}>Privacy Policy</Link>
+            <Link href="#" style={{ color: "var(--gray-700)", fontSize: "0.75rem", textDecoration: "none" }}>Terms of Service</Link>
           </div>
         </div>
       </div>
-
-      <style>{`
-        .footer-link {
-          color: rgba(255,255,255,0.6);
-          text-decoration: none;
-          font-size: 1rem;
-          transition: all 0.2s ease;
-        }
-        .footer-link:hover {
-          color: var(--primary);
-          padding-left: 4px;
-        }
-        @media (max-width: 900px) {
-          .footer-grid {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-        @media (max-width: 600px) {
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </footer>
   );
 }

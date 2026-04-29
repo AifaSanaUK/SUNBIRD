@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -15,10 +16,28 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+      
+      const sections = navLinks.map(link => link.href.substring(1));
+      let current = "home";
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = section;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -37,6 +56,27 @@ export default function Navbar() {
         backdropFilter: "blur(12px)",
       }}
     >
+      {/* Top Bar - Centered */}
+      <div style={{ 
+        background: "var(--primary)", 
+        color: "white", 
+        fontSize: "0.75rem", 
+        padding: "8px 0",
+        fontWeight: 500
+      }}>
+        <div className="container-custom" style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap", textAlign: "center" }}>
+          <a href="tel:08136888101" style={{ color: "white", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+            <Phone size={14} /> 081368 88101
+          </a>
+          <a href="mailto:sunbirdpowersolution@gmail.com" style={{ color: "white", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+            <Mail size={14} /> sunbirdpowersolution@gmail.com
+          </a>
+          <div className="hide-mobile" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <MapPin size={14} /> AKN Arcade, Chevayur, Calicut
+          </div>
+        </div>
+      </div>
+
       <div className="container-custom" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
         {/* Logo */}
         <Link href="#home" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
@@ -44,7 +84,7 @@ export default function Navbar() {
             src="/logo.webp" 
             alt="SUNBIRD Logo" 
             style={{ 
-              height: "65px", 
+              height: "60px", 
               width: "auto", 
               objectFit: "contain",
               display: "block"
@@ -54,33 +94,27 @@ export default function Navbar() {
 
         {/* Desktop Nav Links */}
         <nav style={{ display: "flex", gap: 32, alignItems: "center" }} className="hide-mobile">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                fontWeight: 600,
-                fontSize: "1rem",
-                color: "var(--gray-800)",
-                textDecoration: "none",
-                padding: "8px 0",
-                transition: "all 0.2s ease",
-                borderBottom: "3px solid transparent",
-              }}
-              onMouseEnter={(e: any) => e.target.style.color = "var(--primary)"}
-              onMouseLeave={(e: any) => e.target.style.color = "var(--gray-800)"}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.substring(1);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{
+                  fontWeight: 600,
+                  fontSize: "0.95rem",
+                  color: isActive ? "var(--primary)" : "var(--gray-800)",
+                  textDecoration: "none",
+                  padding: "8px 0",
+                  transition: "all 0.2s ease",
+                  borderBottom: isActive ? "3px solid var(--primary)" : "3px solid transparent",
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
-
-        {/* CTA Button */}
-        <div className="hide-mobile">
-          <Link href="#contact" className="btn btn-primary" style={{ padding: "12px 32px", fontSize: "0.95rem" }}>
-            Get a Quote →
-          </Link>
-        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -114,7 +148,7 @@ export default function Navbar() {
               style={{
                 fontWeight: 500,
                 fontSize: "1.1rem",
-                color: "var(--gray-700)",
+                color: activeSection === link.href.substring(1) ? "var(--primary)" : "var(--gray-700)",
                 textDecoration: "none",
                 padding: "8px 0",
                 borderBottom: "1px solid var(--gray-100)",
