@@ -4,7 +4,7 @@ const posts = [
   {
     slug: "5-reasons-switch-solar-2026",
     category: "Trends",
-    date: "April 28, 2026",
+    date: "Apr 28",
     title: "5 Reasons to Switch to Solar in 2026",
     excerpt: "Discover why 2026 is the pivotal year for renewable energy adoption and how technology has peaked.",
     img: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1000&auto=format&fit=crop",
@@ -13,7 +13,7 @@ const posts = [
   {
     slug: "solar-savings-calculator",
     category: "Savings",
-    date: "April 20, 2026",
+    date: "Apr 20",
     title: "How Much Can You Save with Solar Panels?",
     excerpt: "A deep dive into the ROI of solar installations and how to calculate your monthly electricity savings.",
     img: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=1000&auto=format&fit=crop",
@@ -22,7 +22,7 @@ const posts = [
   {
     slug: "maintenance-guide-performance",
     category: "Maintenance",
-    date: "April 15, 2026",
+    date: "Apr 15",
     title: "Solar Panel Maintenance Guide for Performance",
     excerpt: "Keep your system at peak efficiency with these simple seasonal maintenance tips from our experts.",
     img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1000&auto=format&fit=crop",
@@ -31,7 +31,7 @@ const posts = [
   {
     slug: "govt-subsidies-india",
     category: "Policy",
-    date: "April 10, 2026",
+    date: "Apr 10",
     title: "Government Solar Subsidies You Should Know",
     excerpt: "Understanding the latest PM-Surya Ghar and other state incentives for solar installation in India.",
     img: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -40,7 +40,7 @@ const posts = [
   {
     slug: "residential-vs-commercial-solar",
     category: "Planning",
-    date: "April 05, 2026",
+    date: "Apr 05",
     title: "Residential vs Commercial Solar Systems",
     excerpt: "Which scale is right for you? We compare the capacity, costs, and installation time for both.",
     img: "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=1000&auto=format&fit=crop",
@@ -49,7 +49,7 @@ const posts = [
   {
     slug: "battery-storage-independence",
     category: "Storage",
-    date: "April 01, 2026",
+    date: "Apr 01",
     title: "The Future of 24/7 Battery Storage",
     excerpt: "How lithium-ion technology is enabling total grid independence for smart homes and businesses.",
     img: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=1000&auto=format&fit=crop",

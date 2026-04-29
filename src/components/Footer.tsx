@@ -41,14 +41,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <FacebookIcon size={18} />, href: "#", label: "Facebook" },
-    { icon: <InstagramIcon size={18} />, href: "#", label: "Instagram" },
+    { icon: <FacebookIcon size={18} />, href: "https://www.facebook.com/share/1EpkyWh2P4/?mibextid=wwXIfr", label: "Facebook" },
+    { icon: <InstagramIcon size={18} />, href: "https://www.instagram.com/_sunbird_power_solution?igsh=YnFidml0bmMwNzNo", label: "Instagram" },
     { icon: <YoutubeIcon size={18} />, href: "#", label: "YouTube" },
     { icon: <LinkedinIcon size={18} />, href: "#", label: "LinkedIn" },
   ];
 
   return (
-    <footer style={{ background: "var(--gray-900)", color: "white", paddingTop: 80, paddingBottom: 40 }}>
+    <footer style={{ background: "#000000", color: "white", paddingTop: 80, paddingBottom: 40 }}>
       <div className="container-custom">
         <div style={{
           display: "grid",
@@ -59,7 +59,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
             <div style={{ marginBottom: 24, display: "flex", alignItems: "center" }}>
-              <img src="/footer.webp" alt="Sunbird Logo" style={{ height: 60, width: "auto" }} />
+              <img 
+                src="/footer.webp" 
+                alt="Sunbird Logo" 
+                style={{ 
+                  height: "clamp(60px, 8vw, 80px)", 
+                  width: "auto" 
+                }} 
+              />
             </div>
             <p style={{ color: "var(--gray-500)", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: 32, maxWidth: 300 }}>
               Empowering homes and businesses with smart, reliable hybrid solar solutions since 2015. Leading the transition to sustainable energy.

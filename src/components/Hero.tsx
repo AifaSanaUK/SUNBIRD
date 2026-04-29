@@ -22,12 +22,12 @@ export default function Hero() {
           alignItems: "center"
         }}>
           <div className="animate-fadeup hero-content-block" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-            <h2 className="hero-title-mobile" style={{ fontSize: "clamp(2.5rem, 8vw, 3rem)", fontWeight: 900, color: "var(--gray-900)", lineHeight: 1.1, marginBottom: 24 }}>
+            <h2 className="hero-title-mobile" style={{ fontSize: "clamp(2.5rem, 8vw, 3.1em)", fontWeight: 900, color: "var(--gray-900)", lineHeight: 1.1, marginBottom: 24 }}>
               Smart Energy.<br />
               Reliable Power.<br />
               <span style={{ color: "var(--primary)" }}>Always On.</span>
             </h2>
-            <p className="hero-desc-mobile" style={{ fontSize: "clamp(0.85rem, 2vw, 0.50rem)", color: "var(--gray-500)", lineHeight: 1.7, marginBottom: 40, maxWidth: 480 }}>
+            <p className="hero-desc-mobile" style={{ fontSize: "clamp(0.85rem, 2vw, 0.95rem)", color: "var(--gray-500)", lineHeight: 1.7, marginBottom: 40, maxWidth: 480 }}>
               Experience the future of energy with Sunbird Hybrid Solar Systems. Maximize solar use, store energy, and ensure uninterrupted power.
             </p>
             <div className="hero-btns-mobile" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
@@ -38,9 +38,9 @@ export default function Hero() {
             {/* REFINED MICRO-GLASS STATS BAR */}
             <div className="hero-stats-glass-compact">
               {[
-                { val: 10, lab: "Years experience", suf: "+" },
-                { val: 500, lab: "Projects done", suf: "+" },
-                { val: 100, lab: "Happy clients", suf: "%" }
+                { val: 10, lab: "Years", suf: "+" },
+                { val: 500, lab: "Projects", suf: "+" },
+                { val: 100, lab: "Clients", suf: "%" }
               ].map((s) => (
                 <div key={s.lab} className="compact-stat-item">
                   <div className="compact-stat-number">
