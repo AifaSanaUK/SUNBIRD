@@ -256,9 +256,7 @@ body {
   .compact-stat-label { font-size: 0.55rem !important; line-height: 1 !important; }
 
   /* 2-COLUMN MOBILE GRIDS FOR HIGH DENSITY */
-  .features-grid,
-  .professional-grid,
-  .blog-grid,
+  /* 2-COLUMN MOBILE GRIDS FOR HIGH DENSITY */
   #team .container-custom > div:last-child {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;

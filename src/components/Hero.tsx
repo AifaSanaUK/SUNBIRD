@@ -6,6 +6,10 @@ export default function Hero() {
   return (
     <section id="home" className="hero-section" style={{
       minHeight: "100vh",
+      backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/banner.webp')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundAttachment: "fixed",
       position: "relative",
       display: "flex",
       alignItems: "center",

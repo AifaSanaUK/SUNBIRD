@@ -4,12 +4,6 @@ import { Cpu, Battery, Zap, ShieldCheck } from "lucide-react";
 export default function WhyChooseUs() {
   const features = [
     { 
-      title: "Smart Technology", 
-      desc: "AI-driven monitoring for peak performance. Real-time monitoring via mobile app. Optimize your energy usage patterns. Get instant alerts for maintenance. Maximize your solar harvesting daily.", 
-      icon: <Cpu size={32} />,
-      img: "/smarttechnoly.webp"
-    },
-    { 
       title: "Premium Equipment", 
       desc: "Tier-1 solar panels and industrial inverters. Tier-1 panels with 25-year warranty. Industrial grade hybrid inverters. High-cycle battery storage systems. Built to withstand extreme weather.", 
       icon: <Battery size={32} />,
@@ -20,12 +14,6 @@ export default function WhyChooseUs() {
       desc: "Uninterrupted energy with smart hybrid storage. Automatic transition to battery power. Keep essential appliances running. Protect sensitive electronics from surges. Peace of mind during any outage.", 
       icon: <Zap size={32} />,
       img: "/banner.webp"
-    },
-    { 
-      title: "Certified Expertise", 
-      desc: "MNRE approved installers with 10+ years experience. Fully compliant with MNRE standards. Safety-first installation protocols. Licensed electrical engineers. Proven track record of 500+ projects.", 
-      icon: <ShieldCheck size={32} />,
-      img: "/certifies.webp"
     },
     { 
       title: "Cost Efficiency", 

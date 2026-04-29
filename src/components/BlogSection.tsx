@@ -38,24 +38,6 @@ const posts = [
     img: "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=800",
     link: "https://economictimes.indiatimes.com/topic/solar-subsidy",
   },
-  {
-    slug: "residential-vs-commercial-solar",
-    category: "Planning",
-    date: "Apr 05",
-    title: "Residential vs Commercial Solar Systems",
-    excerpt: "Which scale is right for you? We compare the capacity, costs, and installation time for both.",
-    img: "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=1000&auto=format&fit=crop",
-    link: "https://www.solarreviews.com/blog/residential-vs-commercial-solar-panels",
-  },
-  {
-    slug: "battery-storage-independence",
-    category: "Storage",
-    date: "Apr 01",
-    title: "The Future of 24/7 Battery Storage",
-    excerpt: "How lithium-ion technology is enabling total grid independence for smart homes and businesses.",
-    img: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=1000&auto=format&fit=crop",
-    link: "https://www.energy.gov/eere/solar/solar-plus-storage",
-  },
 ];
 
 export default function BlogSection() {
