@@ -140,7 +140,7 @@ export default function AboutPage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 32, marginTop: 32 }}>
             <div className="card" style={{ padding: 0, overflow: "hidden" }}>
-              <img src="/visitcard.webp" alt="Sunbird Business Card Front" style={{ width: "100%", height: "240px", objectFit: "contain", background: "#f8fafc" }} />
+              <img src="/visitcard1.webp" alt="Sunbird Business Card Front" style={{ width: "100%", height: "240px", objectFit: "contain", background: "#f8fafc" }} />
               <div style={{ padding: 24, textAlign: "center" }}>
                 <h3 style={{ fontWeight: 800, fontSize: "1.1rem" }}>Professional Consultation</h3>
                 <p style={{ color: "var(--gray-500)", fontSize: "0.85rem", marginTop: 8 }}>Connect with our experts for personalized energy planning.</p>

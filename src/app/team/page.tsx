@@ -24,7 +24,7 @@ export default function TeamPage() {
       <div className="page-hero">
         <div className="container-custom" style={{ position: "relative", zIndex: 1 }}>
           <span className="section-label" style={{ background: "rgba(255,255,255,0.15)", color: "white" }}>The People</span>
-          <h1 style={{ marginTop: 12, marginBottom: 16 }}>Meet Our Team</h1>
+          <h3 style={{ marginTop: 12, marginBottom: 16 }}>Meet Our Team</h3>
           <p style={{ maxWidth: 520 }}>The experts, engineers, and visionaries behind every Sunbird solar system.</p>
         </div>
       </div>

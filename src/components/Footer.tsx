@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
             <div style={{ marginBottom: 24, display: "flex", alignItems: "center" }}>
-              <img src="/footer.webp" alt="Sunbird Logo" style={{ height: 40, width: "auto" }} />
+              <img src="/footer.webp" alt="Sunbird Logo" style={{ height: 60, width: "auto" }} />
             </div>
             <p style={{ color: "var(--gray-500)", fontSize: "0.85rem", lineHeight: 1.7, marginBottom: 32, maxWidth: 300 }}>
               Empowering homes and businesses with smart, reliable hybrid solar solutions since 2015. Leading the transition to sustainable energy.
