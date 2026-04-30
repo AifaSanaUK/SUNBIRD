@@ -35,7 +35,7 @@ export default function AboutSystems() {
           </div>
 
           {/* HYBRID SYSTEM */}
-          <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", border: "2px solid var(--primary-light)", borderRadius: 24 }}>
+          <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
             <div style={{ height: 240, background: "white", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--gray-100)" }}>
               <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
