@@ -40,9 +40,8 @@ export default function AboutSystems() {
               <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
             <div style={{ padding: 32 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <div style={{ marginBottom: 16 }}>
                 <h3 style={{ fontSize: "1.2rem", fontWeight: 600, color: "var(--gray-900)" }}>Hybrid Solar System</h3>
-                <span style={{ background: "var(--primary)", color: "white", fontSize: "0.7rem", fontWeight: 800, padding: "4px 10px", borderRadius: 20, textTransform: "uppercase" }}>Recommended</span>
               </div>
               <p style={{ color: "var(--gray-600)", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: 24 }}>
                 The ultimate in energy independence. Combine grid connectivity with smart battery storage to ensure your power stays on even during grid failures.

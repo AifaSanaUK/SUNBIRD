@@ -30,12 +30,11 @@ export default function Hero() {
       paddingTop: "120px",
       scrollMarginTop: "100px",
       color: "white",
-      overflow: "hidden",
-      backgroundColor: "var(--gray-900)"
+      overflow: "hidden"
     }}>
       {heroImages.map((img, index) => (
-        <div 
-          key={img} 
+        <div
+          key={img}
           className="hero-bg-layer"
           style={{
             position: "absolute",
@@ -50,7 +49,7 @@ export default function Hero() {
             opacity: safeIndex === index ? 1 : 0,
             transition: "opacity 1.5s ease-in-out",
             zIndex: 1
-          }} 
+          }}
         />
       ))}
       <div className="container-custom" style={{ width: "100%", position: "relative", zIndex: 2 }}>
@@ -83,7 +82,7 @@ export default function Hero() {
             }}>
               Experience the future of energy with Sunbird Hybrid Solar Systems. Maximize solar use, store energy, and ensure uninterrupted power.
             </p>
-            <div className="hero-btns-mobile" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 48 }}>
+            <div className="hero-btns-mobile" style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 16 }}>
               <Link href="#contact" className="btn btn-primary" style={{ minWidth: 180 }}>Get Started</Link>
               <Link href="#about" className="btn btn-outline" style={{ minWidth: 180, borderColor: "white", color: "white" }}>About Us</Link>
             </div>
