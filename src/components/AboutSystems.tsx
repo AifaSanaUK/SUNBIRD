@@ -16,7 +16,7 @@ export default function AboutSystems() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 32 }}>
           {/* ON-GRID SYSTEM */}
           <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
-            <div style={{ height: 240, background: "white", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--gray-100)" }}>
+            <div style={{ height: 300, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <img src="/ongrid.webp" alt="On-Grid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
             <div style={{ padding: 32 }}>
@@ -36,7 +36,7 @@ export default function AboutSystems() {
 
           {/* HYBRID SYSTEM */}
           <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
-            <div style={{ height: 240, background: "white", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--gray-100)" }}>
+            <div style={{ height: 300, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
             <div style={{ padding: 32 }}>
