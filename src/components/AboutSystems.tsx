@@ -16,8 +16,8 @@ export default function AboutSystems() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 32 }}>
           {/* ON-GRID SYSTEM */}
           <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
-            <div style={{ height: 240, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center", padding: 12 }}>
-              <img src="/ongrid.webp" alt="On-Grid Solar System Diagram" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+            <div style={{ height: 240, background: "white", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--gray-100)" }}>
+              <img src="/ongrid.webp" alt="On-Grid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
             <div style={{ padding: 32 }}>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 600, marginBottom: 16, color: "var(--gray-900)" }}>On-Grid Solar System</h3>
@@ -36,8 +36,8 @@ export default function AboutSystems() {
 
           {/* HYBRID SYSTEM */}
           <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", border: "2px solid var(--primary-light)", borderRadius: 24 }}>
-            <div style={{ height: 240, background: "var(--primary-light)", overflow: "hidden" }}>
-              <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <div style={{ height: 240, background: "white", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--gray-100)" }}>
+              <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
             <div style={{ padding: 32 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>

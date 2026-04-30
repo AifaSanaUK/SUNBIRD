@@ -57,7 +57,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-section {
+  .hero-bg-layer {
     background-attachment: scroll !important; /* Fixes iOS mobile zoom bug */
     background-position: center bottom !important; /* Shifts image to show panels */
   }

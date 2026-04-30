@@ -1,22 +1,58 @@
 "use client";
+import { useState, useEffect } from "react";
 import CountUp from "react-countup";
 import Link from "next/link";
 
+const heroImages = [
+  '/banner.webp',
+  '/heroimg1.webp',
+  '/heroimg2.webp'
+];
+
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => prev + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const safeIndex = currentImage % heroImages.length;
+
   return (
-    <section id="home" className="hero-section" style={{
+    <section id="home" style={{
       minHeight: "100vh",
-      backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/banner.webp')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundAttachment: "fixed",
       position: "relative",
       display: "flex",
       alignItems: "center",
       paddingTop: "120px",
       scrollMarginTop: "100px",
-      color: "white"
+      color: "white",
+      overflow: "hidden",
+      backgroundColor: "var(--gray-900)"
     }}>
+      {heroImages.map((img, index) => (
+        <div 
+          key={img} 
+          className="hero-bg-layer"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${img}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+            opacity: safeIndex === index ? 1 : 0,
+            transition: "opacity 1.5s ease-in-out",
+            zIndex: 1
+          }} 
+        />
+      ))}
       <div className="container-custom" style={{ width: "100%", position: "relative", zIndex: 2 }}>
         <div className="hero-grid" style={{
           display: "grid",
