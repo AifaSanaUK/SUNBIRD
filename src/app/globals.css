@@ -315,3 +315,92 @@ body {
     justify-content: center !important;
   }
 }
+
+/* Scenario Cards for Technical Diagrams */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.scenario-card {
+  background: #f0f7ff;
+  border: 1px solid #bae6fd;
+  padding: 12px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+@media (max-width: 768px) {
+  .scenario-grid {
+    gap: 6px;
+  }
+  .scenario-card {
+    padding: 8px 4px;
+    font-size: 0.58rem; /* Significantly reduced for phone view */
+    min-height: 85px; /* Allow more height as they will be narrower */
+    line-height: 1.2;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scenario-card {
+    font-size: 0.52rem; /* Even smaller for very small phones */
+    letter-spacing: -0.1px;
+    min-height: 95px;
+  }
+}
+
+
+/* Scenario Cards for Technical Diagrams */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.scenario-card {
+  background: #f0f7ff;
+  border: 1px solid #bae6fd;
+  padding: 12px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+@media (max-width: 768px) {
+  .scenario-grid {
+    gap: 6px;
+  }
+  .scenario-card {
+    padding: 8px 4px;
+    font-size: 0.58rem; /* Significantly reduced for phone view */
+    min-height: 85px; /* Allow more height as they will be narrower */
+    line-height: 1.2;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scenario-card {
+    font-size: 0.52rem; /* Even smaller for very small phones */
+    letter-spacing: -0.1px;
+    min-height: 95px;
+  }
+}
