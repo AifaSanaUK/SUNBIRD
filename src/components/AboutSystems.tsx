@@ -16,6 +16,33 @@ export default function AboutSystems() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 32 }}>
           {/* ON-GRID SYSTEM */}
           <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
+            <div style={{ padding: "24px 24px 0" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+                {[
+                  "Generation greater than consumption — export excess units to utility grid",
+                  "Generation less than consumption — use solar units and import additional units from utility grid",
+                  "Night — import electricity from utility grid"
+                ].map((text, i) => (
+                  <div key={i} style={{ 
+                    background: "#f0f7ff", 
+                    border: "1px solid #bae6fd", 
+                    padding: "12px 8px", 
+                    borderRadius: "12px", 
+                    fontSize: "0.75rem", 
+                    fontWeight: 500,
+                    lineHeight: 1.3,
+                    textAlign: "center",
+                    color: "var(--gray-700)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    minHeight: "70px"
+                  }}>
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </div>
             <div style={{ height: 300, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <img src="/ongrid.webp" alt="On-Grid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>
@@ -36,6 +63,33 @@ export default function AboutSystems() {
 
           {/* HYBRID SYSTEM */}
           <div className="card animate-fadeup" style={{ padding: 0, overflow: "hidden", borderRadius: 24 }}>
+            <div style={{ padding: "24px 24px 0" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+                {[
+                  "Generation greater than consumption — power home and charge battery for night use",
+                  "Generation less than consumption — use stored battery energy to minimize grid imports",
+                  "Grid Outage / Night — seamless switch to battery backup for 24/7 power security"
+                ].map((text, i) => (
+                  <div key={i} style={{ 
+                    background: "#f0f7ff", 
+                    border: "1px solid #bae6fd", 
+                    padding: "12px 8px", 
+                    borderRadius: "12px", 
+                    fontSize: "0.75rem", 
+                    fontWeight: 500,
+                    lineHeight: 1.3,
+                    textAlign: "center",
+                    color: "var(--gray-700)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    minHeight: "70px"
+                  }}>
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </div>
             <div style={{ height: 300, background: "#f8f9fa", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <img src="/hybrid.webp" alt="Hybrid Solar System Diagram" style={{ width: "100%", height: "100%", objectFit: "contain", padding: 16 }} />
             </div>

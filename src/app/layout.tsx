@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "SUNBIRD Power Solutions | Smart Solar Energy",
   description: "Sunbird Power Solutions provides hybrid solar systems, smart energy monitoring, and reliable power for your home and business.",
   keywords: "solar, hybrid solar, power solutions, solar energy, sunbird, smart energy",
-  icons: {
-    icon: '/favicon.webp',
-  },
 };
 
 export default function RootLayout({
