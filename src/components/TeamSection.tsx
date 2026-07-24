@@ -2,44 +2,79 @@
 
 export default function TeamSection() {
   const team = [
-    { name: "Saneesh K", role: "MD & Technical Lead", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop" },
-    { name: "Prabin K", role: "Operation Head", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=256&auto=format&fit=crop" },
-    { name: "Sreejesh K", role: "Technical Head", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&auto=format&fit=crop" },
+    { 
+      name: "ABHIRAM EK", 
+      role: "PURCHASE MANAGER", 
+      img: "/purchasemanager.webp"
+    },
+    { 
+      name: "SUDHI KR", 
+      role: "SALES HEAD", 
+      img: "/saleshead.webp"
+    },
+    { 
+      name: "SAFEER NA", 
+      role: "OPERATION HEAD", 
+      img: "/operationhead.webp"
+    },
+    { 
+      name: "MOHAMMED INAM A", 
+      role: "TECHNICAL LEAD", 
+      img: "/technicallead.webp"
+    },
   ];
 
   return (
     <section id="team" className="section" style={{ background: "white", scrollMarginTop: "100px" }}>
       <div className="container-custom">
-        <div style={{ textAlign: "center", marginBottom: 40 }}>
+        <div style={{ textAlign: "center", marginBottom: 44 }}>
           <span className="section-label">Our Experts</span>
-          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 4vw, 2rem)" }}>Meet the Team</h2>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 4vw, 2.2rem)" }}>Meet the Team</h2>
         </div>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: 20
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          gap: 28
         }}>
           {team.map((member) => (
-            <div key={member.name} className="card" style={{ textAlign: "center", padding: 24 }}>
+            <div 
+              key={member.name} 
+              className="card" 
+              style={{ 
+                textAlign: "center", 
+                padding: "36px 20px", 
+                borderRadius: 24,
+                boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+                border: "1px solid #f1f5f9",
+                transition: "all 0.3s ease"
+              }}
+            >
+              {/* Circle image container without border or shadow */}
               <div style={{
-                width: 100,
-                height: 100,
+                width: 200,
+                height: 200,
                 borderRadius: "50%",
-                background: "var(--primary-light)",
-                margin: "0 auto 16px",
+                background: "#ffffff",
+                margin: "0 auto 24px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 overflow: "hidden"
               }}>
-                {member.img ? (
-                  <img src={member.img} alt={member.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                ) : (
-                  <CircleUser size={48} color="var(--primary)" />
-                )}
+                <img 
+                  src={member.img} 
+                  alt={member.name} 
+                  style={{ 
+                    width: "100%", 
+                    height: "100%", 
+                    objectFit: "contain",
+                    borderRadius: "50%"
+                  }} 
+                />
               </div>
-              <h3 style={{ fontWeight: 800, fontSize: "1rem", marginBottom: 4 }}>{member.name}</h3>
-              <div style={{ fontSize: "0.8rem", color: "var(--primary)", fontWeight: 600 }}>{member.role}</div>
+
+              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", marginBottom: 6, color: "#0f172a", letterSpacing: "0.02em" }}>{member.name}</h3>
+              <div style={{ fontSize: "0.85rem", color: "var(--primary, #0089D3)", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}>{member.role}</div>
             </div>
           ))}
         </div>
@@ -47,10 +82,3 @@ export default function TeamSection() {
     </section>
   );
 }
-
-const CircleUser = ({ size, color }: { size: number; color: string }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-    <circle cx="12" cy="7" r="4" />
-  </svg>
-);

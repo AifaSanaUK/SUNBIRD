@@ -7,15 +7,11 @@ export const metadata: Metadata = {
 };
 
 const team = [
-  { name: "James Harrington", role: "Founder & CEO", dept: "Leadership", bio: "15+ years in renewable energy. James founded Sunbird with a vision to make smart solar accessible to every home.", avatar: "👨‍💼", color: "#0089D3" },
-  { name: "Priya Nair", role: "Chief Technical Officer", dept: "Engineering", bio: "Expert in hybrid inverter design and smart grid integration. Leads all R&D and technical operations.", avatar: "👩‍💻", color: "#7b1fa2" },
-  { name: "Robert Chen", role: "Head of Operations", dept: "Operations", bio: "Ensures flawless project delivery from site survey to final commissioning across every installation.", avatar: "👨‍🔧", color: "#e65100" },
-  { name: "Amira Hassan", role: "Sales Director", dept: "Sales", bio: "Passionate about connecting clients with the right energy solutions. Manages the national sales team.", avatar: "👩‍💼", color: "#00897b" },
-  { name: "Lucas Fernandez", role: "Lead Solar Engineer", dept: "Engineering", bio: "Designs custom PV systems, structural plans, and energy yield assessments for every project.", avatar: "👨‍🔬", color: "#1565c0" },
-  { name: "Sarah Okonkwo", role: "Customer Success Manager", dept: "Support", bio: "Dedicated to ensuring every Sunbird customer is fully satisfied with their solar journey.", avatar: "👩‍🦱", color: "#c62828" },
+  { name: "ABHIRAM EK", role: "PURCHASE MANAGER", dept: "Procurement", img: "/purchasemanager.webp", color: "#0089D3" },
+  { name: "SUDHI KR", role: "SALES HEAD", dept: "Sales", img: "/saleshead.webp", color: "#00897b" },
+  { name: "SAFEER NA", role: "OPERATION HEAD", dept: "Operations", img: "/operationhead.webp", color: "#e65100" },
+  { name: "MOHAMMED INAM A", role: "TECHNICAL LEAD", dept: "Engineering", img: "/technicallead.webp", color: "#7b1fa2" },
 ];
-
-const departments = [...new Set(team.map((t) => t.dept))];
 
 export default function TeamPage() {
   return (
@@ -37,58 +33,32 @@ export default function TeamPage() {
             <h2 className="section-title" style={{ textAlign: "center" }}>The Team Driving the Solar Revolution</h2>
           </div>
 
-          {/* Leadership card */}
-          <div style={{
-            background: "linear-gradient(135deg, var(--primary) 0%, #004f80 100%)",
-            borderRadius: 28,
-            padding: "52px 64px",
-            display: "flex",
-            alignItems: "center",
-            gap: 48,
-            marginBottom: 52,
-            color: "white",
-          }}>
-            <div style={{
-              width: 130, height: 130,
-              borderRadius: "50%",
-              background: "rgba(255,255,255,0.15)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "4rem",
-              flexShrink: 0,
-              border: "4px solid rgba(255,255,255,0.3)",
-            }}>
-              {team[0].avatar}
-            </div>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", opacity: 0.7, marginBottom: 8 }}>FOUNDER & CHIEF EXECUTIVE</div>
-              <h2 style={{ color: "white", fontSize: "2rem", marginBottom: 8 }}>{team[0].name}</h2>
-              <p style={{ opacity: 0.8, maxWidth: 560, lineHeight: 1.8 }}>{team[0].bio}</p>
-            </div>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "2.5rem", fontWeight: 900 }}>15+</div>
-              <div style={{ opacity: 0.7, fontSize: "0.85rem" }}>Years Experience</div>
-            </div>
-          </div>
-
           {/* Team Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 32 }}>
-            {team.slice(1).map((member) => (
-              <div key={member.name} className="card" style={{ padding: 36 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 28 }}>
+            {team.map((member) => (
+              <div key={member.name} className="card" style={{ padding: "36px 20px", textAlign: "center", borderRadius: 24 }}>
                 <div style={{
-                  width: 80, height: 80,
+                  width: 200, 
+                  height: 200,
                   borderRadius: "50%",
-                  background: `${member.color}18`,
-                  border: `3px solid ${member.color}40`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "2.5rem",
-                  marginBottom: 20,
+                  margin: "0 auto 24px",
+                  overflow: "hidden",
+                  background: "#ffffff"
                 }}>
-                  {member.avatar}
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    style={{ 
+                      width: "100%", 
+                      height: "100%", 
+                      objectFit: "contain",
+                      borderRadius: "50%"
+                    }} 
+                  />
                 </div>
                 <div style={{ fontSize: "0.7rem", fontWeight: 700, color: member.color, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>{member.dept}</div>
-                <h3 style={{ fontWeight: 800, fontSize: "1.1rem", marginBottom: 4 }}>{member.name}</h3>
-                <div style={{ color: "var(--gray-500)", fontSize: "0.85rem", fontWeight: 500, marginBottom: 14 }}>{member.role}</div>
-                <p style={{ color: "var(--gray-500)", fontSize: "0.875rem", lineHeight: 1.7 }}>{member.bio}</p>
+                <h3 style={{ fontWeight: 800, fontSize: "1.15rem", marginBottom: 4, color: "#0f172a" }}>{member.name}</h3>
+                <div style={{ color: "var(--primary)", fontSize: "0.85rem", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}>{member.role}</div>
               </div>
             ))}
           </div>
